@@ -73,7 +73,8 @@ exports.read = async (req, res) => {
 exports.readAll = async (req, res) => {
   try {
     const contacts = await Contact.find();
-    if ((contacts = [])) {
+    // console.log(contacts);
+    if (contacts === []) {
       return res.status(404).send({
         read_status: "failed",
         message: "contacts not found",
@@ -91,6 +92,7 @@ exports.readAll = async (req, res) => {
       });
     }
   } catch (error) {
+    console.log(error);
     return res.status(500).send({
       read_status: "failed",
       message: "internal server error",
