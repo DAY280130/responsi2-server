@@ -13,7 +13,7 @@ exports.create = async (req, res) => {
       });
     }
 
-    oldAcc = await Account.find({ username });
+    oldAcc = await Account.findOne({ username });
     if (oldAcc) {
       return res.status(400).send({
         create_status: "failed",
@@ -48,7 +48,7 @@ exports.login = async (req, res) => {
       });
     }
 
-    const account = await Account.find({ username });
+    const account = await Account.findOne({ username });
     if (!account) {
       return res.status(400).send({
         login_status: "failed",

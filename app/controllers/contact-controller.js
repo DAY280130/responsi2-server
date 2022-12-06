@@ -11,7 +11,7 @@ exports.create = async (req, res) => {
       });
     }
 
-    const oldCont = await Contact.find({ name });
+    const oldCont = await Contact.findOne({ name });
     if (oldCont) {
       return res.status(400).send({
         create_status: "failed",

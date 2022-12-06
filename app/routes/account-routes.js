@@ -6,5 +6,5 @@ module.exports = (app) => {
   router.post("/login", accounts.login);
 
   // Custom url (endpoint)
-  app.use("/api/acc", router);
+  app.use("/api/accounts", router);
 };

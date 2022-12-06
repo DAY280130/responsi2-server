@@ -9,5 +9,5 @@ module.exports = (app) => {
   router.delete("/remove", contacts.delete);
 
   // Custom url (endpoint)
-  app.use("/api/cont", router);
+  app.use("/api/contacts", router);
 };
